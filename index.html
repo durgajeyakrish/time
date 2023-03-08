@@ -2,113 +2,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice</title>
+	<meta http-eqiv="X-UA-compatible" content="IE=Rdge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>time calculation</title>
+	<style>
+	   table,tr, td, th{
+	      border:1px solid black;
+		  border-collapse:collapse;
+	   }
+	</style>
 </head>
-<style>
-	.table, tr, td {
-		border: 1px solid;
-	}
-</style>
 <body>
 
-	<div>	
-		<input placeholder="india">
-		<select>
-			<option>00</option>
-			<option>00.30</option>
-			<option>1</option>
-			<option>1.30</option>
-			<option>2</option>
-			<option>2.30</option>
-			<option>3</option>
-			<option>3.30</option>
-			<option>4</option>
-			<option>4.30</option>
-			<option>5</option>
-			<option>5.30</option>
-			<option>6</option>
-			<option>6.30</option>
-			<option>7</option>
-			<option>7.30</option>
-			<option>8</option>
-			<option>8.30</option>
-			<option>9</option>
-			<option>9.30</option>
-			<option>10</option>
-			<option>10.30</option>
-			<option>11</option>
-			<option>11.30</option>
-			<option>12</option>
-			<option>12.30</option>
-			<option>13</option>
-			<option>13.30</option>
-			<option>14</option>
-			<option>14.30</option>
-			<option>15</option>
-			<option>15.30</option>
-			<option>16</option>
-			<option>16.30</option>
-			<option>17</option>
-			<option>17.30</option>
-			<option>18</option>
-			<option>18.30</option>
-			<option>19</option>
-			<option>19.30</option>
-			<option>20</option>
-			<option>20.30</option>
-			<option>21</option>
-			<option>21.30</option>
-			<option>22</option>
-			<option>22.30</option>
-			<option>23</option>
-			<option>23.30</option>
-		</select>
-		<button type="button" onclick="time()">submit</button>
-	</div>
-<script>
+   <label>select time</label>
+   <select id='value'>
+      <option> --India time-- </option>
+      <option>00:00</option>
+	  <option>00:30</option>
+      <option>01:00</option>
+	  <option>01:30</option>
+	  <option>02:00</option>
+	  <option>02:30</option>
+	  <option>03:00</option>
+	  <option>03:30</option>
+	  <option>04:00</option>
+	  <option>04:30</option>
+	  <option>05:00</option>
+	  <option>05:30</option>
+	  <option>06:00</option>
+	  <option>06:30</option>
+	  <option>07:00</option>
+	  <option>07:30</option>
+	  <option>08:00</option>
+	  <option>08:30</option>
+	  <option>09:00</option>
+	  <option>09:30</option>
+	  <option>10:00</option>
+	  <option>10:30</option>
+	  <option>11:00</option>
+	  <option>11:30</option>
+	  <option>12:00</option>
+	  <option>12:30</option>
+	  <option>13:00</option>
+	  <option>13:30</option>
+	  <option>14:00</option>
+	  <option>14:30</option>
+	  <option>15:00</option>
+	  <option>15:30</option>
+	  <option>16:00</option>
+	  <option>16:30</option>
+	  <option>17:00</option>
+	  <option>17:30</option>
+	  <option>18:00</option>
+	  <option>18:30</option>
+	  <option>19:00</option>
+	  <option>19:30</option>
+	  <option>20:00</option>
+	  <option>20:30</option>
+	  <option>21:00</option>
+	  <option>21:30</option>
+	  <option>22:00</option>
+	  <option>22:30</option>
+	  <option>23:00</option>
+	  <option>23:30</option>
+   </select>
+   
+   <button onclick=myFun()>click</button>
 
-let place= [{
-    name: "paris",
-    time:"1.04pm",
-},
- {
-    name:"dubai",
-    time:"4.05 pm",
-},
-  {
-	name:"india",
-    time:"5.50 pm",
-  },
- {
-    name: "london",
-    time: "12.05 pm",
-}];
-
-
-	function time(){
-			let table=document.createElement("table");
-			document.body.appendChild(table);
-			
-			table.setAttribute("class",tab);
-			
-			
-			for(i=0;i<place.length;i++){
-			
-				let tr=document.createElement("tr");
-				let td=document.createElement("td");
-				
-				tr.setAttribute("class",tr);
-				td.setAttribute("class",td);
-				
-				table.appendChild(tr);
-				tr.appendChild(td);
-				tr.innerHTML=place[i].place;
-			
+   <script>
+   
+     var details=[
+		    {
+			   country:'singapore',
+			   time:'02:30'
+			},
+			{
+			   country:'America',
+			   time:'10:30' 
+			},
+			{
+			   country:'maldives',
+			   time:'00:30'
+			},
+			{
+			   country:'thailand',
+			   time:'01:30'
 			}
-				
+		 ]
+	    
+   
+   
+      function myFun(){
+	  
+	   let value = document.getElementById('value').value;
+		   
+	   var div = document.createElement('table');
+		document.body.appendChild(div); 
+		
+		var tr1 = document.createElement('tr');
+	    div.appendChild(tr1);
+		
+		var th = document.createElement('th');
+		tr1.appendChild(th);
+		th.innerHTML='S.No';
+		
+		var th1 = document.createElement('th');
+		tr1.appendChild(th1);
+		th1.innerHTML='Countries Name';
+		
+		var th2 = document.createElement('th');
+		tr1.appendChild(th2);
+		th2.innerHTML='Time'; 
+		
+		for(i=0;i<details.length; i++){
+		   var tr2 = document.createElement('tr');
+		   div.appendChild(tr2);
+		   
+		   var td = document.createElement('td');
+		   tr2.appendChild(td);
+		   td.innerHTML=i+1;
+		   
+		   var td1 = document.createElement('td');
+		   tr2.appendChild(td1);
+		   td1.innerHTML=details[i].country;
+		   
+		   var td2 = document.createElement('td');
+		   tr2.appendChild(td2);
+		   td2.innerHTML=parseFloat(details[i].time)+parseFloat(value); 
+		   
 		}
-</script>
+		
+		}
+		
+   </script>
+   
 </body>
 </html>
