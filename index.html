@@ -90,13 +90,52 @@
 			}
 		 ]
 	    
+		
+		
+	  function timeChange(str){
+	     let x = str.split(':');
+		 let y = Number(x[0])+Number(x[1]/60);
+		 return y;
+	  }
+	  
+	  
+	  
+	  
+	  function changeValue(num){
+	  
+	     let j; 
+	     if(parseInt(num)===num){
+		      j = numFun(num)+":00";
+		 }
+		 else{
+		    let i = num.toString().split('.');
+			let s= parseInt(Number("."+i[1]).toFixed(2)*60)
+		    j = numFun(Number(i[0]))+":"+numFun(s);
+		 }
+		
+	     
+		 console.log(j)
+	  }
+	  changeValue(2.15);
+	  <!-- 0.166667 -->
+	  
+	  
+	  
+	  function numFun(num){
+	     return num<10? '0'+num : num;
+	  }
+   
+   
+   
    
    
       function myFun(){
 	  
 	   let value = document.getElementById('value').value;
 		   
-	   var div = document.createElement('table');
+		   
+	    
+		var div = document.createElement('table');
 		document.body.appendChild(div); 
 		
 		var tr1 = document.createElement('tr');
@@ -128,12 +167,18 @@
 		   
 		   var td2 = document.createElement('td');
 		   tr2.appendChild(td2);
-		   td2.innerHTML=parseFloat(details[i].time)+parseFloat(value); 
+		   td2.innerHTML=timeChange(details[i].time)+timeChange(value); 
 		   
 		}
 		
+		
 		}
 		
+			  
+   
+   
+   
+   
    </script>
    
 </body>
